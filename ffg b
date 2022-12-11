@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace peredelka5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int gold;  
+            int buyingСrystals;  
+            int crystaСost = 4;  
+            bool enoughGold; 
+
+            Console.WriteLine($"Добрый вечер, в магазине сегодня кристалы по - {crystaСost} золотых ");
+            Console.Write("Сколько у вас золота? ");
+            gold = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Сколько кристаллов вы хотите купить? ");
+            buyingСrystals = Convert.ToInt32(Console.ReadLine());
+
+            enoughGold = gold >= buyingСrystals * crystaСost;
+
+            buyingСrystals *= Convert.ToInt32(enoughGold);
+            gold -= buyingСrystals * crystaСost;
+
+            Console.Write($"В вашем кошельке - {buyingСrystals} кристаллов и {gold} золотых");
+
+            Console.ReadLine();
+        }
+    }
+}
